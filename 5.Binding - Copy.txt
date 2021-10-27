@@ -1,0 +1,28 @@
+								 Binding
+								 =======
+								 =======
+
+	Definations -:
+		- Establish connection between UI and component logic .
+	 	- exchange data component to template and vice versa .
+
+		
+
+							   Types of Binding
+							-------------------------
+							-------------------------
+	Note -: NgModel directives is used then Register FormsModule inside @NgModule  imports:[FormsModule]
+
+	1> one way Data Binding -:
+		-  send data from component to view . 
+		- Ex : [] - Property Binding
+		       {{}} - interpolation 
+		
+	2> two way Binding -:
+		- both component and view exchange data at same time .
+		- Example : [(ngModel)] 
+	3> Event Binding -:
+		- send data from view to component
+		- Ex (click) button event
+	4> Interpolation -:
+		- send data from component to view but value may be change and perform arithmetic operation

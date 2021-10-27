@@ -1,0 +1,59 @@
+									Forms
+								---------------------------
+								---------------------------
+
+	- Collections of Control .
+	
+	
+	* Types of Forms -:
+	1> Template Driven Forms
+	2> Reactives or Model Driven Forms
+	3> FormsBuilder
+
+
+	
+		
+								Template Driven Forms
+								----------------------
+								----------------------
+
+	Note 1> write code in proper format (indent)
+		shift + Alt + F
+	
+	Note 2> form-group and form-control are bootstrap classes .
+		
+	Note 3> nexted json in angular and complex JSON
+
+	step 1> import FormsModule inside imports of Module class decorator 
+		i.e  @NgModule({
+				
+				imports:[]	
+
+			})
+
+
+	step 2> create Your Component
+	
+	step 3> Add Your HTML Form Templates.
+	
+	step 4> Convert Your HTML Form to template Angular Form using template variable (#)
+	
+	step 5> Apply validations to Your Forms .
+		
+		- It can be donr in Following ways :
+			
+			ng untouched  			-----> ng touched
+			ng pristine(not modified yet)   -----> ng dirty
+			ng valid      			-----> ng invalid
+
+	Note 
+	1> dirty -: indicate user has changed value
+	2> pristine -: opposite of dirt flag
+	3> touched -: indicates field is touched by user
+	4> untouched -: opposite of touched
+	5> valid -: checks whether all validation have passed .
+	6> invalid -: opposite of valid . 
+
+
+
+

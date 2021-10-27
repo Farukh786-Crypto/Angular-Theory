@@ -1,0 +1,19 @@
+
+								Securing Angular Applications
+							-----------------------------------------------
+							-----------------------------------------------
+
+	Definations -: for securing the Angular application when navigation happens Route Guard is implemented 
+		       it prevent from unauthorized access
+	
+		
+	Authentication -: Identify the user authority
+	Authorization -: Rights
+	
+	
+		Angular provided 4 interface of Route Guard 
+	
+	1. CanActivate				canActivate() 
+	2. CanActivateChild			canActivateChild()
+	3. CanLoad				canLoad()
+	4. CanDeactivate			canDeactivate()

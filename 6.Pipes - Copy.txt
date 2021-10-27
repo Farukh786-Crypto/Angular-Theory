@@ -1,0 +1,102 @@
+										Pipe
+										====
+										====
+
+	Definations -: Data Transforming Technique before Display on the view .
+	
+	 inbuilt types and custom pipes 
+
+		
+									 Types of Pipes
+									----------------
+									----------------
+
+
+	Note : All pipe are written in lowercase only and represent in | symbol inside interpolations
+
+	1> uppercase -:
+		- All Letter are uppercase
+		- Example : {{name|uppercase}}
+
+	2> lowercase -:
+		- All Letter are lowercase
+		- Example : {{name|lowercase}}
+
+	3> titlecase -:
+		- First letter of word is uppercase
+		- Example : {{name|titlecase}}
+
+	4> currency -:
+		- show currency code and currency symbol
+		- Example {{amount|currency:'INR':true}}
+		- currency code is applicable for every country (INR) but currency symbol (₹) is not available for every country
+		  if currency symbol present apply true
+
+			currency code			currency symbol
+			
+			   USD				    $
+			   INR				    ₹
+
+	5> json
+	6> date
+
+
+									Custom Pipes
+									------------
+									------------
+
+
+	step 1> create class of pipe decorator
+	
+	step 2> implement PipeTransform inside transform method of class
+		
+	Note : pipe class must implement PipeTransform interface 		
+
+	Example : 
+		import { Pipe,PipeTransform } from '@angular/core'
+		
+		@Pipe({
+  		  name:'cube'  		// pipe name
+		})
+
+	
+		export class CubePipeComponent implements PipeTransform
+		{
+    			transform(data:number,no1:number)
+    			{
+         			return no1?(data*data*data)+no1:(data*data*data);
+    			}
+		}
+
+	step 3> pipe must be register inside module @NgModule -> declarations:[CubePipeComponent]
+			
+
+	step 4> Apply pipe name inside interpolation
+	
+	Example :
+		<h3> The custom pipes , cube of {{no}} is {{no|cube:3}} </h3>
+
+	Note : apply pipe name which present inside @Pipe(){name:'cube'}
+		to html {{no:cube}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

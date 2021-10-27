@@ -1,0 +1,49 @@
+									Model Driven Form
+									-----------------
+									-----------------
+
+	Note 1> write code in proper format (indent)
+		shift + Alt + F
+	
+	Note 2> form-group and form-control are bootstrap classes .
+		
+	Note 3> nexted json in angular and complex JSON
+
+	
+	Steps to Model Driven Form
+	==========================
+
+	step 1> Register FormsModule,ReactiveFormsModule in Your module
+	
+		@NgModule({
+			declarations:[],
+			imports:[
+				FormsModule,
+				ReactiveFormsModule
+			]
+		
+		})
+
+	
+	step 2> Create Your component and design of its html form then Register inside Module
+
+		
+
+	step 3> Convert Your Form in model driven form 
+		
+		a] create Your own Form Model inside constructor of class ->
+			FormGroup and  FormControl and Validators
+
+			Note : constructor is not overload inside typescript
+
+		b] Attach your Form Model to Your html using novalidate to form tag
+			<form novalidate>
+			</form>
+	
+	Note :
+		1> form-group and form-control are Bootstrap classes
+		2> formGroup and formControlName are Angular syntax
+
+	
+	step 4> add [FormGroup] and formControlName to the html to convert form in model driven form
+ 

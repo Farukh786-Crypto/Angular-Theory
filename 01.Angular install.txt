@@ -1,0 +1,176 @@
+step 1: go to google type node js downloded
+	link : https://nodejs.org/en/download/
+	go to LTS Windows installer 64 bit click
+
+	Note : Node js is used to Run javascript programme outside Browser
+	
+
+step 2:got to windows logo search cmd
+	type :
+	command  1: npm --version
+	commmand 2: node --version
+
+step 3:type command :	npm i -g typescript
+
+step 4: tsc --version
+	check typescript version
+
+step 5:npm i -g @angular/cli
+	- downlod angular cli
+step 6:ng --version
+	- check angular version 
+
+step 7: ng new <angular application name> Ex : ng new AngularApp
+
+step 8: cd <angular application name> Ex : cd AngularApp
+
+step 9 : go to path File and type cmd then cmd is open write command 
+	code . // open visual studio
+
+step 10: Command to Run Applications
+	ng s -o 
+	or ng serve 
+	or npm start
+	or ng s -o --port 5500 
+
+
+
+	
+Note -: After Running Application on browser localhost://4200
+	some js file is created such as Follows :
+	
+	1> Runtime.js - This is for webpack runtime .
+	2> Polyfill.js - Helps to run new ES version JS in old browser .
+	3> Vendor.js - This is actual project code which you coded ( Component , Modules and Model )
+	4> main.js - This points to the first module of your project .
+	5> Style.js - All CSS code goes in this .
+
+
+
+	Ng Serve = it compilation and bundling(webpack) happen at run time on memory or RAM . 
+	Ng Build = it compilation and bundling happen at harddisk
+
+	
+	Folder Stucture :
+	
+	1> tslint.json -> Linting is the process of running a program that will analyse code for potential errors .
+	2> polyfills.ts -> polyfills helps you to run new ES version javascripts on old browser which does not support them .
+	3> package.json -: contain the havascript references packages
+			Major version are not incremented 
+			^ -: Latest minor and patch version .
+			~ -: only latest patch version .
+	4> package.lock.json-: it has all the absolute version entries after npm version resolution using ~ and ^ .
+	Note -:
+
+	@NgModule({
+		
+		declarations:[component,custom-directives,custom-pipe],
+		imports:[Module],
+		providers:[service],
+		Bootstrap:[start up component]
+	})
+	5>Index.html” is the startup page and it bootstraps all other pages using
+	systemjs
+	
+
+	** Angular Bootstraping Process 
+
+	Process 1> index.html is a startup page and it bootstrap all oher js and pages files using system.js specially main.js
+		
+		Note : ng build command run u see inside index.html Body tag all js file loded or 
+		       ng server command run got o DOM go to network see index.html all js file i.e main.js is loded 
+
+		Example 1: after run ng Build commmand
+
+		<!DOCTYPE html><html lang="en"><head>
+  		<meta charset="utf-8">
+  		<title>MyFirstProject</title>
+  		<base href="/">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="icon" type="image/x-icon" href="favicon.ico">
+  		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+		<body>
+  			<app-root></app-root>
+			<script src="runtime.js" defer>
+			</script><script src="polyfills.js" defer>
+			</script><script src="main.js" defer>		// main.js File loded on Runtime
+			</script>
+
+		</body>
+		</html>
+			
+
+	Process 2> main.ts file using bootstrapModule() start First module
+		
+		Example :
+			platformBrowserDynamic().bootstrapModule(AppModule)
+  			.catch(err => console.error(err));
+			
+			-- Here they start AppModule module run on Browser using platform	
+	
+	Process 3>AppModule.module.ts which is First module run first component under Bootstrap:[]
+		
+		Example :
+			@NgModule({
+
+  				declarations: [
+    					AppComponent
+  				],
+  				imports: [
+    					BrowserModule,
+    					AppRoutingModule,
+ 
+  				],
+  				providers: [],
+  				bootstrap: [AppComponent]  // First Component Run
+
+			})
+			export class AppModule { }
+		
+
+	Process 4> First component contain i.e AppComponent selector at its decorator to run html code on browser placed inside index.html body tag
+		
+		1> Example : First component
+
+		@Component({
+ 			 selector: 'app-root',
+  			 templateUrl: './app.component.html',
+  			 styleUrls: ['./app.component.css']
+		})
+		export class AppComponent {
+  			title = 'my-first-project';
+		}
+
+		2> Example : index.html
+		
+		
+		<!doctype html>
+		<html lang="en">
+
+		<head>
+  		<meta charset="utf-8">
+  		<title>MyFirstProject</title>
+  		<base href="/">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		</head>
+
+		<body>
+  		<app-root></app-root>   // Plced selector here to Run First Component
+		</body>
+
+		</html>
+
+
+
+
+
+
+
+
+
+
+
+

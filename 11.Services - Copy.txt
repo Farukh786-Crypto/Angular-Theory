@@ -1,0 +1,71 @@
+									Services in Angular
+									-------------------
+									-------------------
+
+	- Reusable code .
+	- Use -:  when same code u share across the module to another module in Angular services is used .
+
+	 Question : Defination of good Architectures ?
+	 Answer : Changes at one place should not lead to change many place .
+
+	- DI make Your architecture loosely coupled and their are two ways to create DI
+	1] Centralize way -: centrally push object to the client .
+	2] Conditional way -: The client decide which object he wants to inject .
+	
+
+
+	
+	Steps to create Services
+	------------------------
+
+	step 1> create your service File .
+		Example : student.service.ts
+	
+	step 2> import { Injectable } from '@angular/core'
+		@Injectable()
+
+		- Use Injectable decorator
+
+	Questions : What is the purpose of injectable?
+		Marking a class with @Injectable ensures that the compiler will generate the necessary metadata to create the class's dependencies when the class is injected.
+		inside constructor. 
+
+	step 3> Add export class to Your Service Component
+		
+		export class StudentService{
+
+			// Add Logic here
+		
+		}
+	
+	step 4> Register Your Service Component in Two ways
+		
+		1] Global Level at NgModule-:
+
+		   Example -:
+
+ 		   @NgModule({
+			providers: [// Register Your Service here]
+		   })
+
+		2] Local Level at @Component -:
+		   	
+		Example -:
+		
+		@Component({
+  			  selector:'ser-comp',
+    			  templateUrl:'./service.component.html',
+    			  providers:[StudentService]
+		})
+
+
+	step 5> Consume Your services by using Depedency Injection (DI)
+		
+		1] create instance of services inside component constructor
+
+		Example :
+		
+		export class ServiceComponent{
+			// create DI
+			constructor(private stud:StudentService){}
+		}

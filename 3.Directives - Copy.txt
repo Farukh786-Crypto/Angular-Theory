@@ -1,0 +1,35 @@
+ 								Directives
+								==========
+								==========
+
+
+	Definations -: 
+		- HTML Injectable
+		- it is used to change the appearence and behaviour or Layout of DOM elements .
+
+
+					
+							Types of Directives
+							===================
+							===================
+
+	1> Component Directives -:
+		- it is special kind of directives which has view associate with it .
+
+	2> Attributes Directives -:
+		- manipulate the behaviour of single html element in browser not DOM .
+		- it shows in [] Ex : [ngStyle] , [hidden] , [ngClass]
+		
+
+	3> Structural Directives -:
+		- Adding and Removing Element from DOM
+		- it shows in * Ex : *ngSwitch , *ngFor , *ngIf   (it follows camel case)
+		- it shows in * (asterik symbol) 
+
+
+	Note -: 
+	
+	1> DOM (Document Object Model) -:
+
+		- Right click on Browser  show in inspect or press F12 got o src u see source code i.e html is show on background of browser output
+		   the source code is DOM . 

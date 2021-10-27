@@ -1,0 +1,106 @@
+
+	
+									Component
+									=========
+									=========
+
+Definations -: it is special kind of Directives which has view associate with it .
+
+
+					
+
+step 1: create Your Component.ts file
+	colleage.component.ts
+
+step 2: import Your component Dependencies i.e
+	import {Component} from '@angular/core'
+
+step 3: Add component decorator (Attaches behaviour to Your class)
+	
+	- decorator represent in @Component
+	
+	Note -: Decorator defines what kind of class it is . For example if you decorate @Component decorator then it says it is an Angular component , if you put @NgModule it becomes a 
+	Angular module
+	
+	@Component({
+ 		selector:'coll-comp',		// landing your contain in appropriate locations
+		templateUrl:'./colleage.component.html',
+		styleUrls:['./colleage.component.css']	
+	})
+
+	Note -: 
+		- component decorator syntax : @Component
+		- Inside decorator contain metadata (data above data) Ex : selector , template , styleUrls
+
+
+step 4: Add Your Export class
+	
+	export class ColleageComponent{
+    		
+	}
+
+step 5: Register Your Component in Module class @NgModule 
+	
+	@NgModule({
+		declarations: [
+			ColleageComponent    // Component name here
+		]
+	})
+
+	Note :
+	- In module class decorator i.e 
+	  @NgModule({
+		declarations:[component class,pipe class,directive class],
+		imports:[module class],
+		providers:[service name],
+		exports:[startup component]
+		
+	  })
+
+
+step 6: put selector inside html where u see in browser inside any html file
+	
+	
+	
+	Ex -: 
+	app.component.html
+	
+	<selector></selector>
+
+	<coll-comp></coll-comp>	
+
+
+	Note -: if ur component startup mention in Bootstrap metadata and selector place inside index.html inside body .
+		- changes perform inmain.ts also
+	
+	Example -:
+	1>main.ts
+		Example  -:
+		platformBrowserDynamic().bootstrapModule(AppModule)  // give module name here
+  		.catch(err => console.error(err));
+
+	2> app.module.ts	
+	@NgModule({
+		bootstrap: [
+			// Component name here
+		]
+	})
+
+	3>index.html
+
+	<body>
+		<coll-comp></coll-comp>  // put selector here
+	</body>
+	
+step 7: then run command ng s -o
+
+
+
+
+
+
+
+
+
+
+
